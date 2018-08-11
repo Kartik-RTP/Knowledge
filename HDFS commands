@@ -1,0 +1,23 @@
+Following are the common hdfs commands
+
+hdfs dfs -ls < HDFS path>
+hdfs dfs -copyFromLocal <Local path> <HDFS path>
+hdfs dfs -copyToLocal <HDFS path> <Local Path>
+
+hdfs dfs -rm <HDFS path for file>
+hdfs dfs -rm -R <HDFS path of directory>
+
+generally rm command simply moves hdfs files to a trash file ..a better way would be to actually delete the data itself  using the skipTrash argument as below
+
+hdfs dfs -rm  -skipTrash <HDFS path for file>
+hdfs dfs -rm -R -skipTrash <HDFS path of directory>
+
+Note that the -ls command gives the size of files in bytes but one thing to note here is that it will give the size of a directory as 0 which can make us think that firectory is empty when it migt not be the case,
+so to check size of directory structures, use
+
+hdfs dfs -du -h <HDFS path>
+
+if you want to just see the size of entire directory and not size of subdirectories , the n use
+
+hdfs dfs -dus -h <HDFS path>
+
