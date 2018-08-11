@@ -7,7 +7,8 @@ hdfs dfs -copyToLocal <HDFS path> <Local Path>
 hdfs dfs -rm <HDFS path for file>
 hdfs dfs -rm -R <HDFS path of directory>
 
-generally rm command simply moves hdfs files to a trash file ..a better way would be to actually delete the data itself  using the skipTrash argument as below
+generally rm command simply moves hdfs files to a trash folder (.Trash)
+A better way would be to actually delete the data itself  using the skipTrash argument as below
 
 hdfs dfs -rm  -skipTrash <HDFS path for file>
 hdfs dfs -rm -R -skipTrash <HDFS path of directory>
